@@ -1,10 +1,10 @@
 # Brain Tumor Type Classification from Gene Expression Data
 
-A machine learning pipeline that classifies brain tumor subtypes (ependymoma, glioblastoma, medulloblastoma, pilocytic astrocytoma, and healthy tissue) from microarray gene expression data — tackling a classic high-dimensional, low-sample-size (HDLSS) problem common in genomics.
+A machine learning pipeline that classifies brain tumor subtypes (ependymoma, glioblastoma, medulloblastoma, pilocytic astrocytoma, and healthy tissue) from microarray gene expression data. Tackling a classic high-dimensional, low-sample-size (HDLSS) problem common in genomics.
 
 ## Overview
 
-This project uses the **CuMiDa Brain Cancer Gene Expression dataset** (GSE50161): 130 tissue samples, each measured across 54,675 genes. With ~420x more features than samples, the core challenge isn't building a model — it's compressing the feature space without losing the biological signal, then making the model's predictions interpretable.
+This project uses the **CuMiDa Brain Cancer Gene Expression dataset** (GSE50161): 130 tissue samples, each measured across 54,675 genes. With ~420x more features than samples, the core challenge isn't building a model, it's compressing the feature space without losing the biological signal, then making the model's predictions interpretable.
 
 The pipeline covers:
 - Stratified train/test splitting for a small, imbalanced multi-class dataset
@@ -21,15 +21,15 @@ The pipeline covers:
 
 ## Approach
 
-1. **Data inspection** — checked shape, types, and missing values
-2. **Target exploration** — visualized class distribution to flag imbalance up front
-3. **Preprocessing** — dropped the sample ID column, label-encoded the target, standardized features
-4. **Stratified split** — 104 train / 26 test, preserving class proportions given the small sample size
-5. **PCA** — reduced 54,675 genes to 77 principal components (95% variance retained)
-6. **Random Forest classifier** — trained on the PCA-reduced features
-7. **Cross-validation** — 5-fold CV to get a more reliable performance estimate than a single split
-8. **Evaluation** — classification report and confusion matrix on the held-out test set
-9. **Explainability (SHAP)** — trained a second Random Forest directly on the top 500 most variable genes (skipping PCA, so features stay biologically identifiable) and used SHAP to find which genes drive each prediction
+1. **Data inspection** - checked shape, types, and missing values
+2. **Target exploration** - visualized class distribution to flag imbalance up front
+3. **Preprocessing** - dropped the sample ID column, label-encoded the target, standardized features
+4. **Stratified split** - 104 train / 26 test, preserving class proportions given the small sample size
+5. **PCA** - reduced 54,675 genes to 77 principal components (95% variance retained)
+6. **Random Forest classifier** - trained on the PCA-reduced features
+7. **Cross-validation** - 5-fold CV to get a more reliable performance estimate than a single split
+8. **Evaluation** - classification report and confusion matrix on the held-out test set
+9. **Explainability (SHAP)** - trained a second Random Forest directly on the top 500 most variable genes (skipping PCA, so features stay biologically identifiable) and used SHAP to find which genes drive each prediction
 
 ## Results
 
@@ -47,9 +47,9 @@ The pipeline covers:
 
 **Overall accuracy:** 85% (macro F1: 0.85, weighted F1: 0.84)
 
-The model performs strongly overall, with perfect classification of healthy tissue and glioblastoma precision. The main weak point is medulloblastoma recall (0.50) — the confusion matrix shows 2 of 4 medulloblastoma samples misclassified as ependymoma, likely reflecting both overlapping expression signatures and the very small sample count for this class (only 4 test samples).
+The model performs strongly overall, with perfect classification of healthy tissue and glioblastoma precision. The main weak point is medulloblastoma recall (0.50). The confusion matrix shows 2 of 4 medulloblastoma samples misclassified as ependymoma, likely reflecting both overlapping expression signatures and the very small sample count for this class (only 4 test samples).
 
-**Interpretable model (top 500 genes, no PCA) accuracy:** 96.2% — notably higher than the PCA-based model, suggesting the top-variance genes alone carry most of the discriminative signal.
+**Interpretable model (top 500 genes, no PCA) accuracy:** 96.2%, notably higher than the PCA-based model, suggesting the top-variance genes alone carry most of the discriminative signal.
 
 **Top genes driving predictions (via SHAP):**
 
