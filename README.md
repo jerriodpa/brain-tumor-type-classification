@@ -24,7 +24,7 @@ The pipeline covers:
 1. **Data inspection** - checked shape, types, and missing values
 2. **Target exploration** - visualized class distribution to flag imbalance up front
 3. **Preprocessing** - dropped the sample ID column, label-encoded the target, standardized features
-4. **Stratified split** - 104 train / 26 test, preserving class proportions given the small sample size
+4. **Stratified split** - 104 train / 26 test
 5. **PCA** - reduced 54,675 genes to 77 principal components (95% variance retained)
 6. **Random Forest classifier** - trained on the PCA-reduced features
 7. **Cross-validation** - 5-fold CV to get a more reliable performance estimate than a single split
