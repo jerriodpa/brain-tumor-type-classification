@@ -100,7 +100,7 @@ Probe IDs were mapped to gene symbols using [bioDBnet](https://biodbnet-abcc.nci
 
 ## Future Work
 
-- Validate the ciliary-gene hypothesis with GO/pathway enrichment analysis (e.g., via `gseapy`) across the full top-500 gene set, not just the top 10
+- Validate the ciliary-gene hypothesis with GO/pathway enrichment analysis (e.g., via `gseapy`) across the full top-500 gene set and not just the top 10
 - Try alternative dimensionality reduction (e.g., feature selection via ANOVA F-test) for comparison against PCA
 - Experiment with class-weighting or SMOTE to address medulloblastoma's low recall
 
