@@ -9,7 +9,7 @@ This project uses the **CuMiDa Brain Cancer Gene Expression dataset** (GSE50161)
 The pipeline covers:
 - Stratified train/test splitting for a small, imbalanced multi-class dataset
 - Dimensionality reduction via PCA (54,675 genes → 77 components, retaining 95% of variance)
-- Classification with a Random Forest
+- Classification with Random Forest
 - Model interpretability using SHAP, tracing predictions back to individual genes
 
 ## Dataset
@@ -90,7 +90,7 @@ Probe IDs were mapped to gene symbols using [bioDBnet](https://biodbnet-abcc.nci
 
 1. Download the dataset from [CuMiDa](https://sbcb.inf.ufrgs.br/cumida) or [Kaggle](https://www.kaggle.com/datasets/brunogrisci/brain-cancer-gene-expression-cumida)
 2. Install dependencies: `pip install pandas numpy scikit-learn shap matplotlib seaborn`
-3. Run the notebook cells in order
+3. Run the notebook cells, in order
 
 ## Limitations
 
