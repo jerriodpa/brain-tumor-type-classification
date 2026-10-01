@@ -96,7 +96,7 @@ Probe IDs were mapped to gene symbols using [bioDBnet](https://biodbnet-abcc.nci
 
 - Very small dataset (130 samples) means test-set metrics, especially for minority classes like medulloblastoma, should be read with caution
 - 5-fold cross-validation on an already-small training set means some folds contain very few examples of rarer classes
-- The ciliary-gene pattern is a plausible, literature-supported hypothesis rather than a confirmed causal mechanism so it would need validation against a larger, independent dataset to draw firm biological conclusions
+- The ciliary-gene pattern is a plausible, literature-supported hypothesis rather than a confirmed causal mechanism so it would need validation against a larger, independent dataset to draw strong biological conclusions
 
 ## Future Work
 
