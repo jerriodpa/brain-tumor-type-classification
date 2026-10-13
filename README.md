@@ -86,11 +86,6 @@ Probe IDs were mapped to gene symbols using [bioDBnet](https://biodbnet-abcc.nci
     └── Brain_GSE50161.csv                  # Not included — download from source below
 ```
 
-## How to Run
-
-1. Download the dataset from [CuMiDa](https://sbcb.inf.ufrgs.br/cumida) or [Kaggle](https://www.kaggle.com/datasets/brunogrisci/brain-cancer-gene-expression-cumida)
-2. Install dependencies: `pip install pandas numpy scikit-learn shap matplotlib seaborn`
-3. Run the notebook cells, in order
 
 ## Limitations
 
